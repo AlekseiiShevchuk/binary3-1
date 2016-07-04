@@ -1,0 +1,9 @@
+{
+  "autoload": {
+    "classmap": ["src/"]
+  },
+
+  "require":{
+    "php":"^7.0"
+  }
+}
