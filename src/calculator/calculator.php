@@ -75,7 +75,7 @@ class calculator
     public function twoInPower(int $n): int
     {
         $result = 2**$n;
-        $msg = date("Y-m-d H:i:s"). "\t" . $this->operator . "\t" . $this->a . "\t" . $this->b . $result . "\n";
+        $msg = date("Y-m-d H:i:s"). "\t" . 'twoInPower' . "\t" . $this->a . "\t" . $this->b . $result . "\n";
         self::log($msg);
         return $result;
     }
@@ -86,6 +86,7 @@ class calculator
     }
 
     public function log($msg) {
+
         $this->logger->log($msg);
     }
 }

@@ -6,8 +6,16 @@ declare(strict_types = 1);
 use calculator\calculator;
 require __DIR__ . '/vendor/autoload.php';
 
+$calculator = new calculator();
+
+$calculator->setLogger(new class {
+    public function log($msg)
+    {
+        file_put_contents('log.txt',$msg,FILE_APPEND);
+    }
+});
+
 try {
-    $calculator = new calculator();
     echo 'Суммируем "-50" и "130" = ';
     echo $calculator->calculate(-50,130,'+');
     echo '<br>';
