@@ -42,31 +42,50 @@ class calculator
 
     private function plus(): int
     {
-        return $this->a + $this->b;
+        $result = $this->a + $this->b;
+        $msg = date("Y-m-d H:i:s"). "\t" . $this->operator . "\t" . $this->a . "\t" . $this->b . $result . "\n";
+        self::log($msg);
+        return $result;
     }
 
     private function minus(): int
     {
-        return $this->a - $this->b;
+        $result = $this->a - $this->b;
+        $msg = date("Y-m-d H:i:s"). "\t" . $this->operator . "\t" . $this->a . "\t" . $this->b . $result . "\n";
+        self::log($msg);
+        return $result;
     }
 
     private function multiplication(): int
     {
-        return $this->a * $this->b;
+        $result = $this->a * $this->b;
+        $msg = date("Y-m-d H:i:s"). "\t" . $this->operator . "\t" . $this->a . "\t" . $this->b . $result . "\n";
+        self::log($msg);
+        return $result;
     }
 
     private function intDivision(): int
     {
-        return intdiv($this->a,$this->b);
+        $result = intdiv($this->a,$this->b);
+        $msg = date("Y-m-d H:i:s"). "\t" . $this->operator . "\t" . $this->a . "\t" . $this->b . $result . "\n";
+        self::log($msg);
+        return $result;
     }
 
     public function twoInPower(int $n): int
     {
-        return 2**$n;
+        $result = 2**$n;
+        $msg = date("Y-m-d H:i:s"). "\t" . $this->operator . "\t" . $this->a . "\t" . $this->b . $result . "\n";
+        self::log($msg);
+        return $result;
     }
 
     public function setLogger($logger)
     {
         $this->logger = $logger;
+    }
+
+    public function log($msg) {
+        $this->logger->log($msg);
     }
 }
